@@ -4,9 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
+    <title>happy new year</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .container {
+            background: url('./img/bg.jpg') center no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        #play {
+            z-index: 300;
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            right: 20px;
+            position: absolute;
+            background: url('./img/play.png') center no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+
+        #bg {
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation-fill-mode: forwards;
+        }
+
+        #display {
+            z-index: 200;
+            width: 90%;
+            height: 100%;
+            left: 5%;
+            position: absolute;
+            animation-fill-mode: forwards;
+        }
+
+        .slide-show {
+            animation-name: slide-show;
+        }
+        @keyframes slide-show
+        {
+            from  {opacity: 0;transform: scale(1.2);}
+            to    {opacity: 1;transform: scale(1);}
+        }
+
+        .slide-hide {
+            animation-name: slide-hide;
+        }
+        @keyframes slide-hide
+        {
+            from  {opacity: 1;}
+            to    {opacity: 0;}
+        }
+
+        .slide-show-right {
+            animation-name: slide-show-right;
+        }
+        @keyframes slide-show-right
+        {
+            from  {
+                opacity: 0;
+                transform: scale(1.2);
+                left: 50%;
+            }
+            to    {
+                opacity: 1;
+                transform: scale(1);
+                left: 5%;
+            }
+        }
+
+        .slide-hide-right {
+            animation-name: slide-hide-right;
+        }
+        @keyframes slide-hide-right
+        {
+            from  {
+                opacity: 1;
+                left: 5%;
+            }
+            to    {
+                opacity: 0;
+                left: -50%;
+            }
+        }
+
+        .slide-show-left {
+            animation-name: slide-show-left;
+        }
+        @keyframes slide-show-left
+        {
+            from  {
+                opacity: 0;
+                transform: scale(1.2);
+                left: -50%;
+            }
+            to    {
+                opacity: 1;
+                transform: scale(1);
+                left: 5%;
+            }
+        }
+
+        .slide-hide-left {
+            animation-name: slide-hide-left;
+        }
+        @keyframes slide-hide-left
+        {
+            from  {
+                opacity: 1;
+                left: 5%;
+            }
+            to    {
+                opacity: 0;
+                left: 50%;
+            }
+        }
+
+        .slide-show-top {
+            animation-name: slide-show-top;
+        }
+        @keyframes slide-show-top
+        {
+            from  {
+                opacity: 0;
+                transform: scale(1.2);
+                top: -50%;
+            }
+            to    {
+                opacity: 1;
+                transform: scale(1);
+                top: 0%;
+            }
+        }
+
+        .slide-hide-top {
+            animation-name: slide-hide-top;
+        }
+        @keyframes slide-hide-top
+        {
+            from  {
+                opacity: 1;
+                top: 0%;
+            }
+            to    {
+                opacity: 0;
+                top: 50%;
+            }
+        }
+
+        .slide-bg-show {
+            animation-name: slide-bg-show;
+        }
+        @keyframes slide-bg-show
+        {
+            0% {
+                opacity: 0;
+                transform: scale(1.4);
+            }
+ 
+            25% {
+                opacity: 0;
+                transform: scale(1.4);
+            }
+            100% {
+                opacity: 0.4;
+                transform: scale(1.5);
+            }
+        }
+
+        .slide-bg-hide {
+            animation-name: slide-bg-hide;
+        }
+        @keyframes slide-bg-hide
+        {
+            0% {
+                opacity: 0.4;
+                transform: scale(1.5);
+            }
+            50% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>this is a test</h1>
+    <div class="container">
+        <div id="play"></div>
+        <div id="bg"></div>
+        <div id="display"></div>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./dist/main.js"></script>
 </body>
 </html>
